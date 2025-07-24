@@ -90,6 +90,14 @@ public:
    */
   void checkSHT20(void);
 
+/**
+   * @fn setSHT20Heater
+   * @brief Enable/Disable Heater
+   * @param true/false value to enable/disable Heater
+   * @return None
+   */  
+  void setSHT20Heater(bool enable);
+
 protected:
   /**
    * @fn setResolution
