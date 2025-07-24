@@ -81,6 +81,15 @@ void DFRobot_SHT20::writeUserRegister(byte val)
     _pWire->endTransmission();
 }
 
+void DFRobot_SHT20::setSHT20Heater(bool enable)
+{
+	if (enable) {
+		writeUserRegister(0x04);            // Enable heater (bit 2 = 1)
+		} else {
+		writeUserRegister(0x00);            // Disable heater (bit 2 = 0)
+	}
+}
+
 void DFRobot_SHT20::showReslut(const char *prefix, int val)
 {
     Serial.print(prefix);
